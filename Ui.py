@@ -48,7 +48,7 @@ class MyApp(QWidget):
     
     def button_click_download(self):
         yt = YouTube(self.input_url.text())
-        ys = yt.streams.get_by_itag('22')
+        ys = yt.streams.get_highest_resolution()
         ys.download('project/03_youtube_downloader/download')
 
         if ys.on_complete:
